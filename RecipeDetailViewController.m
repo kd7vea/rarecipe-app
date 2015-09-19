@@ -7,6 +7,9 @@
 //
 
 #import "RecipeDetailViewController.h"
+#import "RARecipes.h"
+
+static CGFloat margin = 15;
 
 @interface RecipeDetailViewController ()
 
@@ -17,6 +20,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
+    
+    UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(64.0, 0.0, self.view.frame.size.width, self.view.frame.size.height)];
+    [self.view addSubview:scrollView];
+    
+    CGFloat topMargin = 20;
+    CGFloat heightForDescription = [self heightForDescription: [RARecipes descriptionAtIndex:self.recipeIndex]];
+    
+    UILabel *description = [[UILabel alloc] initWithFrame:CGRectMake(margin, topMargin, self.view.frame.size.width - 2 * margin, heightForDescription)];
+    
+    
 
 }
 

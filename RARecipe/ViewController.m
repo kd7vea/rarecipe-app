@@ -45,6 +45,8 @@
     
     RecipeDetailViewController *recipeDetailViewController = [RecipeDetailViewController new];
     [self.navigationController pushViewController:recipeDetailViewController animated:YES];
+    recipeDetailViewController.title = [RARecipes titleAtIndex:indexPath.row];
+
 }
 
 
